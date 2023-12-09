@@ -1,0 +1,32 @@
+- id: home
+  translation: 首页
+
+- id: read_more
+  translation: 查看更多
+
+- id: send
+  translation: 发送
+
+- id: related_posts
+  translation: 相关文章
+
+- id: categories
+  translation: 分类
+
+- id: tags
+  translation: Tags
+
+- id: toc
+  translation: 内容目录
+
+- id: share
+  translation: 分享
+
+- id: search_input_placeholder
+  translation: 搜索 ...
+
+- id: no_results_for
+  translation: 没有找到
+
+- id: empty_search_results_placeholder
+  translation: 搜索..

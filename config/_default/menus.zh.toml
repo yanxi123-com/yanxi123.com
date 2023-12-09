@@ -2,14 +2,19 @@
 
 # main menu
 [[main]]
-name = "Home"
+name = "首页"
 url = "/"
 weight = 1
 
 [[main]]
-name = "About"
-url = "about/"
+name = "文章"
+url = "blog/"
 weight = 2
+
+[[main]]
+name = "关于"
+url = "about/"
+weight = 3
 
 [[main]]
 name = "Elements"
@@ -20,11 +25,6 @@ weight = 3
 weight = 4
 name = "Pages"
 hasChildren = true
-
-[[main]]
-parent = "Pages"
-name = "Blog"
-url = "blog/"
 
 [[main]]
 parent = "Pages"
