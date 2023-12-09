@@ -5,7 +5,7 @@
 
 <ul class="{{ $class }} inline-flex space-x-1 capitalize">
   <li>
-    <a class="text-primary dark:text-darkmode-primary" href="{{ $base }}">
+    <a class="text-primary " href="{{ $base }}">
       {{ i18n "home" | default "Home" }}
     </a>
     <span class="inlin-block mr-1">/</span>
@@ -13,9 +13,7 @@
   {{ range $i, $e:= $context.Ancestors.Reverse }}
     {{ if and (not .IsHome) (ne .Title "Pages") }}
       <li>
-        <a
-          class="text-primary dark:text-darkmode-primary"
-          href="{{ .RelPermalink }}">
+        <a class="text-primary " href="{{ .RelPermalink }}">
           {{ .Title }}
         </a>
         <span class="inlin-block mr-1">/</span>
@@ -23,7 +21,7 @@
     {{ end }}
   {{ end }}
   <li>
-    <span class="text-primary dark:text-darkmode-primary">
+    <span class="text-primary ">
       {{ $context.Title }}
     </span>
   </li>

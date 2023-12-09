@@ -92,9 +92,8 @@
                 <div class="swiper-wrapper">
                   {{ range .Params.testimonials }}
                     <div class="swiper-slide">
-                      <div
-                        class="bg-theme-light dark:bg-darkmode-theme-light rounded-lg px-7 py-10">
-                        <div class="text-dark dark:text-white">
+                      <div class="bg-theme-light  rounded-lg px-7 py-10">
+                        <div class="text-dark ">
                           <svg
                             width="33"
                             height="20"
@@ -110,14 +109,14 @@
                           {{ .content | markdownify }}
                         </blockquote>
                         <div class="mt-11 flex items-center">
-                          <div class="text-dark dark:text-white">
+                          <div class="text-dark ">
                             {{ partial "image" (dict "Src" .avatar "Size" "50x50" "Class" "rounded-full" "Alt" .name) }}
                           </div>
                           <div class="ml-4">
                             <h3 class="h5 font-primary font-semibold">
                               {{ .name }}
                             </h3>
-                            <p class="text-dark dark:text-white">
+                            <p class="text-dark ">
                               {{ .designation | markdownify }}
                             </p>
                           </div>
