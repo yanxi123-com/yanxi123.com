@@ -8,7 +8,7 @@ weight = 1
 
 [[main]]
 name = "文章"
-url = "blog/"
+url = "post/"
 weight = 2
 
 [[main]]
@@ -17,48 +17,23 @@ url = "about/"
 weight = 3
 
 [[main]]
-name = "Elements"
-url = "elements/"
-weight = 3
-
-[[main]]
-weight = 4
-name = "Pages"
-hasChildren = true
-
-[[main]]
-parent = "Pages"
-name = "Contact"
-url = "contact/"
-
-[[main]]
-parent = "Pages"
-name = "Authors"
-url = "authors/"
-
-[[main]]
-parent = "Pages"
-name = "Categories"
+name = "分类"
 url = "categories/"
-
-[[main]]
-parent = "Pages"
-name = "404 Page"
-url = "404/"
+weight = 4
 
 
 # footer menu
 [[footer]]
-name = "About"
+name = "关于"
 url = "about/"
 weight = 1
 
 [[footer]]
-name = "Elements"
+name = "使用示例"
 url = "elements/"
 weight = 2
 
 [[footer]]
-name = "Privacy Policy"
-url = "privacy-policy/"
+name = "联系"
+url = "contact/"
 weight = 3

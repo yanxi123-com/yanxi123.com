@@ -26,6 +26,9 @@ DefaultContentLanguage = "zh"
 ########################## Permalinks ############################
 [permalinks.page]
 "pages" = "/:slugorfilename/"
+"post" = '/post/:year/:month/:slug/'
+"tags" = '/tag/:slug/'
+categories = '/category/:slug/'
 
 
 ############################# Modules ############################

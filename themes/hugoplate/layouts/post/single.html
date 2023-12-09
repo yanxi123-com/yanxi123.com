@@ -14,11 +14,9 @@
           </h1>
           <ul class="mb-4">
             <li class="mr-4 inline-block">
-              <a
-                href="{{ `authors/` | relLangURL }}{{ .Params.Author | urlize }}/">
-                <i class="fa-regular fa-circle-user mr-2"></i
-                >{{ .Params.author }}
-              </a>
+              <span class="article-reading-time">
+                约{{ .WordCount }}字，阅读大概需要{{ .ReadingTime }}分钟
+              </span>
             </li>
             <li class="mr-4 inline-block">
               <i class="fa-regular fa-folder mr-2"></i>
@@ -51,7 +49,7 @@
                     <a
                       class="bg-theme-light hover:bg-primary    m-1 block rounded px-3 py-1 hover:text-white"
                       href="{{ `tags/` | relLangURL }}{{ . | urlize | lower }}/">
-                      {{ . | humanize }}
+                      {{ . }}
                     </a>
                   </li>
                 {{ end }}
@@ -68,6 +66,26 @@
             </div>
           {{ end }}
         </article>
+
+        <!-- 上一篇 & 下一篇 -->
+        {{ $str := "" }}
+        <div class="lg:col-10">
+          {{if .NextInSection}}
+          {{/* For the Book layout, prev/next labels are reversed. */}}
+          {{ if in (slice "docs" "book") .Type }}{{ $str = "上一篇" }}{{else}}{{ $str = "下一篇" }}{{end}}
+          <div class="mt-6">
+            <div class="text-gray-900">{{ $str }}</div>
+            <a class="text-lg font-medium underline underline-offset-4" href="{{.NextInSection.RelPermalink}}" rel="next">{{.NextInSection.Title}}</a>
+          </div>
+          {{end}}
+          {{if .PrevInSection}}
+          {{ if in (slice "docs" "book") .Type }}{{ $str = "下一篇" }}{{else}}{{ $str = "上一篇" }}{{end}}
+          <div class="mt-6">
+            <div class="text-gray-900">{{ $str }}</div>
+            <a class="text-lg font-medium underline underline-offset-4" href="{{.PrevInSection.RelPermalink}}" rel="prev">{{.PrevInSection.Title}}</a>
+          </div>
+          {{end}}
+        </div>
       </div>
 
       <!-- Related posts -->
