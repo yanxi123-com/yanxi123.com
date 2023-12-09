@@ -7,11 +7,11 @@ Thumbs.db
 npm-debug.log
 node_modules
 builds
-package-lock.json
+# package-lock.json
 public
 resources
 .hugo_build.lock
 jsconfig.json
 hugo_stats.json
 go.sum
-yarn.lock
+# yarn.lock
