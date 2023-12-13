@@ -12,7 +12,7 @@
           <h1 class="h2 mb-4">
             {{ .Title }}
           </h1>
-          <ul class="mb-4">
+          <ul class="mb-4 text-gray-500">
             <li class="mr-4 inline-block">
               <span class="article-reading-time">
                 约{{ .WordCount }}字
@@ -56,7 +56,7 @@
               </ul>
             </div>
             <div class="lg:col-4 flex items-center">
-              {{ partial "social-share" (dict "Context" . "Class" "share-icons" "Title" (i18n "share") "Whatsapp" false "Telegram" false) }}
+              {{ partial "local-social-share" (dict "Context" . "Class" "share-icons" "Title" (i18n "share")) }}
             </div>
           </div>
           <!-- comments -->
@@ -96,7 +96,7 @@
           <h2 class="h3 mb-12">{{ i18n "related_posts" }}</h2>
           <div class="row">
             {{ range . }}
-              <div class="lg:col-4">
+              <div class="mb-8 lg:col-4 lg:mb-0">
                 {{ partial "components/blog-card" . }}
               </div>
             {{ end }}

@@ -8,7 +8,7 @@
             <h1 class="mb-4">
               {{ .title | markdownify }}
             </h1>
-            <p class="mb-8">
+            <p class="mb-8 text-xl">
               {{ .content | markdownify }}
             </p>
             {{ with .button }}
@@ -72,6 +72,44 @@
     </section>
   {{ end }}
   <!-- /Features -->
+
+  <!-- post -->
+  <section class="section bg-gradient">
+    <div class="container">
+      <div class="row">
+        <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
+          <h2 class="mb-4">
+            <a href="/post/" class="underline underline-offset-4">最近博客文章</a>
+          </h2>
+        </div>
+      </div>
+      <div class="row">
+        {{ range first 3 (where .Site.RegularPages "Section" "post") }}
+          <div class="mb-8 lg:col-4 lg:mb-0">
+            {{ partial "components/blog-card" . }}
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- project -->
+  <section class="section bg-gradient">
+    <div class="container">
+      <div class="row">
+        <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
+          <h2 class="mb-4">项目</h2>
+        </div>
+      </div>
+      <div class="row">
+        {{ range first 3 (where .Site.RegularPages "Section" "project") }}
+          <div class="mb-8 lg:col-4 lg:mb-0">
+            {{ partial "components/project-card" . }}
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
 
   <!-- Testimonials -->
   {{ with site.GetPage "sections/testimonial" }}

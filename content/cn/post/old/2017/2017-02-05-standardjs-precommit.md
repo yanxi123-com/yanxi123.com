@@ -82,7 +82,7 @@ if [ $? -ne 0 ]; then exit 1; fi
 - 安装 overcommit: `gem install overcommit`
 - 在 git 项目中初始化 overcommit
 
-  ```
+  ```bash
   overcommit --install
   overcommit --sign
   ```

@@ -1,0 +1,113 @@
+
+{{ define "main" }}
+  {{ partial "page-header" . }}
+  
+  <section class="section-sm">
+    <div class="container">
+      <div class="row">
+        <div class="md:col-10 lg:col-8 mx-auto">
+          <div class="content">{{ .Content }}</div>
+          <div id="ic-discount-root"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="/3rd/echarts-5.4.3.min.js"></script>
+  <script>
+    var root = document.getElementById('ic-discount-root')
+    fetch("/data/ic-discount.json").then(function(r) {return r.json()})
+    .then(function(data) {
+      var updatedAt = data.updatedAt;
+      var list = data.list
+      var charts = list.map(function(tuple, idx) {
+        {{/*  const [contract, contract_1, x_axis, y_axis, prices, prices_1, rate] = tuple  */}}
+        var contract = tuple[0];
+        var contract_1 = tuple[1];
+        var x_axis = tuple[2];
+        var y_axis = tuple[3];
+        var prices = tuple[4];
+        var prices_1 = tuple[5];
+        var rate = tuple[6];
+
+        var option = {
+          grid: {
+              left: '30',    // 图表距离容器左边的距离
+              right: '40',   // 图表距离容器右边的距离
+              top: '30',     // 图表距离容器上边的距离
+              bottom: '40'   // 图表距离容器下边的距离
+          },
+          tooltip: {
+              trigger: 'axis', // 'axis' 表示触发类型为坐标轴触发，
+          },
+          legend: {
+              data:['贴水', contract, contract_1]
+          },
+          xAxis: {
+              type: 'category',
+              data: x_axis
+          },
+          yAxis: [{
+              type: 'value',
+              name: '贴水',
+              position: 'left',
+              axisLine: {
+                  show: true,
+              },
+          }, {
+              type: 'value',
+              name: '收盘点位',
+              position: 'right',
+              // alignTicks: true,
+              axisLine: {
+                  show: true,
+              },
+          }],
+          series: [{
+              name: '贴水',
+              yAxisIndex: 0,
+              data: y_axis,
+              type: 'line'
+          }, {
+              name: contract,
+              yAxisIndex: 1,
+              data: prices,
+              type: 'line'
+          }, {
+              name: contract_1,
+              yAxisIndex: 1,
+              data: prices_1,
+              type: 'line'
+          }, {
+              name: "年化",
+              yAxisIndex: 1,
+              data: rate,
+              type: 'line'
+          }]
+        }
+
+        // 增加 h4
+        var title = document.createElement("h4")
+        title.innerHTML = `${contract} 和上一个季度合约贴水走势图`
+        title.style = "text-align:center; margin: 40px 0 20px; font-size: 1.2rem; font-weight: 400"
+        root.appendChild(title)
+
+        // 增加 div
+        var div = document.createElement("div")
+        div.id = `chart${idx}`
+        div.style = "width: 100%; height: 400px"
+        root.append(div)
+
+        var chart = echarts.init(div);
+        chart.setOption(option);
+        return chart
+      })
+      function draw() {
+          charts.forEach(function(c) {
+              c.resize()
+          })
+      }
+      window.addEventListener('resize', draw);
+    })
+  </script>
+{{ end }}

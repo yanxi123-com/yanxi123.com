@@ -3,7 +3,7 @@
 <!-- responsive meta -->
 <meta
   name="viewport"
-  content="width=device-width, initial-scale=1, maximum-scale=5" />
+  content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover" />
 
 <!-- theme meta -->
 <meta name="theme-name" content="hugoplate" />
@@ -21,7 +21,7 @@
 
 
 <!-- opengraph and twitter card -->
-{{ partial "basic-seo.html" . }}
+{{ partial "local-basic-seo.html" . }}
 
 
 <!-- custom script -->
@@ -56,3 +56,7 @@
 
 <!-- Crisp Chat -->
 {{/* {{ partialCached "crisp-chat.html" . }} */}}
+
+
+<!-- RSS -->
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="{{ site.Title }}">

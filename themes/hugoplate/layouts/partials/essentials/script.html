@@ -52,3 +52,9 @@
 
 <!-- google adsense -->
 {{ partialCached "adsense-script.html" . }}
+
+<!-- 51统计 -->
+{{ if hugo.IsProduction }}
+  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+  <script>typeof LA === 'object' && LA.init({id:"3GKHdI0L3imZGRnr",ck:"3GKHdI0L3imZGRnr"})</script>
+{{ end }}

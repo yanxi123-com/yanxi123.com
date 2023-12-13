@@ -16,7 +16,7 @@ categories:
 
 ### Level 1:  NSLog, NSString, NSNumber, NSArray, NSDictionary
 
-```objective_c
+```objc
 NSString *name = @"yanxi";
 NSNumber *age = @33;
 NSLog(name);
@@ -38,7 +38,7 @@ NSLog(@"%@", appRatings[@"AngryFowl"]);
 
 ### Lever 2: message, NSUInteger, alloc/init, stringWithFormat
 
-```objective_c
+```objc
 NSArray *foods = @[@"tacos", @"burgers"];
 NSLog(@"%@", [foods description]);   // Sending a message: [objectName messageName];
 
@@ -78,7 +78,7 @@ NSString *fullName = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
 
 ### Level 3: Bool, if/else, switch/case/break, for, block
 
-```objective_c
+```objc
 Bool mrHiggieIsMean = YES;
 
 // for … in 用法，可用于 NSArray，NSDictionary
@@ -126,7 +126,7 @@ void (^myFirstBlock)(NSString *) = ^(NSString *str){
 
 Phone.h 创建对象 Phone，继承自 [NSObject](https://developer.apple.com/reference/objectivec/nsobject)
 
-```objective_c
+```objc
 @interface Phone : NSObject {
   NSNumber *_batteryLife2;     // instance variable，外部不可见
 }
@@ -144,7 +144,7 @@ Phone.h 创建对象 Phone，继承自 [NSObject](https://developer.apple.com/re
 
 Phone.m
 
-```objective_c
+```objc
 #import "Phone.h"
 
 @implementation Phone
@@ -179,7 +179,7 @@ Phone.m
 
 调用 Phone.h
 
-```objective_c
+```objc
 #import "Phone.h"
 
 Phone *talkingiPhone = [[Phone alloc] init];
@@ -197,7 +197,7 @@ NSLog(@"%@", [talkingiPhone speak:@"Hello"]);
 
 判断 copyWithZone: 是否存在
 
-```objective_c
+```objc
 if([talkingiPhone respondsToSelector:@selector(copyWithZone)]){
     Phone *copy = [talkingiPhone copy];
     [copy reportBatteryLife];
@@ -206,14 +206,14 @@ if([talkingiPhone respondsToSelector:@selector(copyWithZone)]){
 
 Person.h NSCopying protocol 类似于 java 里的接口
 
-```objective_c
+```objc
 @interface Person : NSObject <NSCopying>
 @end
 ```
 
 Person.m
 
-```objective_c
+```objc
 @implementation Person
 - (Person *) copyWithZone:(NSZone *)zone;
 {
@@ -229,7 +229,7 @@ nil 表示空，有一个特殊特性，你可以发送 message 给 nil 而不�
 
 Person.h
 
-```objective_c
+```objc
 @interface Person : NSObject
 - (Person *) initWithFirstName:(NSString *)firstName
                       lastName:(NSString *)lastName;
@@ -241,7 +241,7 @@ Person.h
 
 Person.m
 
-```objective_c
+```objc
 @implementation Person
 - (Person *) initWithFirstName:(NSString *)firstName
                       lastName:(NSString *)lastName;
@@ -257,7 +257,7 @@ Person.m
 
 object class
 
-```objective_c
+```objc
 // 当 Phone 子类调用 copyWithZone 时，不应该返回 Phone 对象，这时候需要用到 Object class
 // 见下面 [self class] 用法
 - (Phone *) copyWithZone:(NSZone *)zone;
@@ -270,7 +270,7 @@ object class
 
 id 类型
 
-```objective_c
+```objc
 id person = [[Person alloc] init];     // 不需要 *
 
 id person = [[Person alloc] init];

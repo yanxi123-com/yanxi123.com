@@ -30,51 +30,58 @@ categories:
 
 阿里云提供云服务器的硬盘由两块组成，一块是系统盘，一块是数据盘，默认数据盘是没有挂载的，如果要用到数据盘就需要自己手动挂载。通过命令fdisk -l，可以看到设备名为/dev/xvdb。另外在挂载前要对硬盘（/dev/xvdb）分区和格式化。分区使用命令fdisk，格式化命令为mkfs.ext3。
 
-    fdisk /dev/xvdb
-    
-    （输入n）
-    Command (m for help): n
-    
-    Command action
-    e extended
-    p primary partition (1-4)
-    （输入p）
-    p
-    
-    （输入1）
-    Partition number (1-4): 1
-    
-    （输入p）
-    Command (m for help): p
-    
-    （输入w）
-    Command (m for help): w
+```bash
+fdisk /dev/xvdb
+
+（输入n）
+Command (m for help): n
+
+Command action
+e extended
+p primary partition (1-4)
+（输入p）
+p
+
+（输入1）
+Partition number (1-4): 1
+
+（输入p）
+Command (m for help): p
+
+（输入w）
+Command (m for help): w
+```
 
 此时在使用`fdisk -l`查看应该可以看到类似下面的结果
 
-    Disk /dev/xvdb: 246.9 GB, 246960619520 bytes
-    255 heads, 63 sectors/track, 30024 cylinders
-    Units = cylinders of 16065 * 512 = 8225280 bytes
-    
-    Device Boot Start End Blocks Id System
-    /dev/xvdb1 1 30024 241167748+ 83 Linux
-    
-    上述执行完分区了，最好在执行格式化前重启一下机器。
-    
-    格式化分区
-    mkfs.ext3 /dev/xvdb1
-    
-    格式化根据硬盘的大小不同时间也不同，就等待吧。
-    
-    假设把此硬盘挂在在 /data目录下，先创建data
-    mkdir -pv /data
-    
-    挂载硬盘
-    mount /dev/xvdb1 /data
+```bash
+Disk /dev/xvdb: 246.9 GB, 246960619520 bytes
+255 heads, 63 sectors/track, 30024 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
 
-写入分区表
+Device Boot Start End Blocks Id System
+/dev/xvdb1 1 30024 241167748+ 83 Linux
 
-    echo "/dev/xvdb1 /data ext3 defaults 1 1" >> /etc/fstab
+# 上述执行完分区了，最好在执行格式化前重启一下机器。
 
-也可以直接写入分区表后使用 mount -a 来使之生效。
+# 格式化分区: 
+mkfs.ext3 /dev/xvdb1
+
+# 格式化根据硬盘的大小不同时间也不同，就等待吧。
+
+# 假设把此硬盘挂在在 /data目录下，先创建 data：
+mkdir -pv /data
+
+# 挂载硬盘：
+mount /dev/xvdb1 /data
+```
+
+
+写入分区表：
+
+```bash
+echo "/dev/xvdb1 /data ext3 defaults 1 1" >> /etc/fstab`
+```
+
+也可以直接写入分区表后使用 `mount -a` 来使之生效。
 

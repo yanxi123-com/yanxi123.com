@@ -1,6 +1,8 @@
 ######################## default configuration ####################
 # The base URL of your site (required). This will be prepended to all relative URLs.
-baseURL = "/"
+baseURL = "https://yanxi123.com/"
+# baseURL = "https://yanxi-hugoplate.vercel.app/"
+# baseURL = "/"
 # Title of your website (required).
 title = "阎曦的小站 (YanXi)"
 # Your theme name
@@ -22,13 +24,16 @@ hasCJKLanguage = true #  If hasCJKLanguage true, auto-detect Chinese/Japanese/Ko
 
 DefaultContentLanguage = "zh"
 
+staticDir = ['static']
+
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
 
 ########################## Permalinks ############################
 [permalinks.page]
 "pages" = "/:slugorfilename/"
 "post" = '/post/:year/:month/:slug/'
-"tags" = '/tag/:slug/'
-categories = '/category/:slug/'
 
 
 ############################# Modules ############################

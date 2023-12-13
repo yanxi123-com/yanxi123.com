@@ -1,5 +1,5 @@
 ---
-title: "Elements"
+title: "使用示例"
 # meta title
 meta_title: ""
 # meta description
@@ -10,59 +10,60 @@ draft: false
 
 {{< toc >}}
 
-Here is an example of headings. You can use this heading by the following markdown rules. For example: use `#` for heading 1 and use `######` for heading 6.
 
-# Heading 1
+下面是一个标题的例子。可以通过以下 markdown 规则来写标题。例如：标题1使用 `#` ，标题6使用 `######`` 。
 
-## Heading 2
+# 一级标题
 
-### Heading 3
+## 二级标题
 
-#### Heading 4
+### 三级标题
 
-##### Heading 5
+#### 四级标题
 
-###### Heading 6
+##### 五级标题
 
-<hr>
-
-### Emphasis
-
-The emphasis, aka italics, with _asterisks_ or _underscores_.
-
-Strong emphasis, aka bold, with **asterisks** or **underscores**.
-
-The combined emphasis with **asterisks and _underscores_**.
-
-Strike through uses two tildes. ~~Scratch this.~~
+###### 六级标题
 
 <hr>
 
-### Button
+### 强调
 
-{{< button label="Button" link="/" style="solid" >}}
+通过斜体强调，使用 _下划线_。
+
+通过加粗强调，使用 **星号**。
+
+组合使用星号和下划线 **星号和 _下划线_**。
+
+删除线使用两个波浪号，~~划掉这个~~。
 
 <hr>
 
-### Link
+### 按钮
 
-[I'm an inline-style link](https://www.google.com)
+{{< button label="按钮" link="/" style="solid" >}}
 
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
+<hr>
 
-[I'm a reference-style link][Arbitrary case-insensitive reference text]
+### 链接
 
-[I'm a relative reference to a repository file](../blob/master/LICENSE)
+[我是内联样式链接](https://www.google.com)
 
-[You can use numbers for reference-style link definitions][1]
+[我是带标题的内联样式链接](https://www.google.com "谷歌主页")
 
-Or leave it empty and use the [link text itself].
+[我是引用风格链接][Arbitrary case-insensitive reference text]
 
-URLs and URLs in angle brackets will automatically get turned into links.
-<http://www.example.com> or <http://www.example.com> and sometimes
-example.com (but not on Github, for example).
+[我是对仓库文件的相对引用](../blob/master/LICENSE)
 
-Some text to show that the reference links can follow later.
+[你可以使用数字定义引用风格链接][1]
+
+或者留空，使用 [链接文本本身]。
+
+URL和尖括号中的URL会自动转换为链接。
+<http://www.example.com> 或 <http://www.example.com> 有时
+example.com (但在Github上不行，比如)。
+
+一些文本显示引用链接可以稍后跟随。
 
 [arbitrary case-insensitive reference text]: https://www.themefisher.com
 [1]: https://gethugothemes.com
@@ -70,117 +71,120 @@ Some text to show that the reference links can follow later.
 
 <hr>
 
-### Paragraph
+### 段落
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nihil enim maxime corporis cumque totam aliquid nam sint inventore optio modi neque laborum officiis necessitatibus, facilis placeat pariatur! Voluptatem, sed harum pariatur adipisci voluptates voluptatum cumque, porro sint minima similique magni perferendis fuga! Optio vel ipsum excepturi tempore reiciendis id quidem? Vel in, doloribus debitis nesciunt fugit sequi magnam accusantium modi neque quis, vitae velit, pariatur harum autem a! Velit impedit atque maiores animi possimus asperiores natus repellendus excepturi sint architecto eligendi non, omnis nihil. Facilis, doloremque illum. Fugit optio laborum minus debitis natus illo perspiciatis corporis voluptatum rerum laboriosam.
+知识是痛苦的，智慧是宝贵的，智慧是无限的。真的，真的。但是，如果你不相信上帝的话，你就不会感到悲伤。
 
-<hr>
-
-### Ordered List
-
-1. List item
-2. List item
-3. List item
-4. List item
-5. List item
 
 <hr>
 
-### Unordered List
+### 有序列表
 
-- List item
-- List item
-- List item
-- List item
-- List item
+1. 列表项
+2. 列表项
+3. 列表项
+4. 列表项
+5. 列表项
 
 <hr>
 
-### Notice
+### 无序列表
+
+- 列表项
+- 列表项
+- 列表项
+- 列表项
+- 列表项
+
+<hr>
+
+### 注意
 
 {{< notice "note" >}}
-This is a simple note.
+这是一个简单的提示。
 {{< /notice >}}
 
 {{< notice "tip" >}}
-This is a simple tip.
+这是一个简单的技巧。
 {{< /notice >}}
 
 {{< notice "info" >}}
-This is a simple info.
+这是一个简单的信息。
 {{< /notice >}}
 
 {{< notice "warning" >}}
-This is a simple warning.
+这是一个简单的警告。
 {{< /notice >}}
 
 <hr>
 
-### Tab
+### 标签页
 
 {{< tabs >}}
-{{< tab "Tab 1" >}}
+{{< tab "标签 1" >}}
 
-#### Did you come here for something in particular?
+#### 你来这里有什么特别的事吗？
 
-Did you come here for something in particular or just general Riker-bashing? And blowing into maximum warp speed, you appeared for an instant to be in two places at once. We have a saboteur aboard. We know you’re dealing in stolen ore. But I wanna talk about the assassination attempt on Lieutenant Worf.
-
-{{< /tab >}}
-
-{{< tab "Tab 2" >}}
-
-#### I wanna talk about the assassination attempt
-
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+你是为了某件特别的事情还是只是来批评瑞克？当你加速到最大曲速时，你似乎瞬间出现在两个地方。我们船上有一个破坏者。我们知道你在处理赃物。但我想谈谈对沃尔夫中尉的暗杀企图。
 
 {{< /tab >}}
 
-{{< tab "Tab 3" >}}
+{{< tab "标签 2" >}}
 
-#### We know you’re dealing in stolen ore
+#### 我想谈谈暗杀企图
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+知识是痛苦的，智慧是宝贵的，智慧是无限的。真的，真的。但是，如果你不相信上帝的话，你就不会感到悲伤。
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+知识是痛苦的，智慧是宝贵的，智慧是无限的。真的，真的。但是，如果你不相信上帝的话，你就不会感到悲伤。
+
+{{< /tab >}}
+
+{{< tab "标签 3" >}}
+
+#### 我们知道你在处理偷来的矿石
+
+知识是痛苦的，智慧是宝贵的，智慧是无限的。真的，真的。但是，如果你不相信上帝的话，你就不会感到悲伤。
+
+知识是痛苦的，智慧是宝贵的，智慧是无限的。真的，真的。但是，如果你不相信上帝的话，你就不会感到悲伤。
 
 {{< /tab >}}
 {{< /tabs >}}
 
 <hr>
 
-### Accordions
+### 手风琴
 
-{{< accordion "Why should you need to do this?" >}}
+{{< accordion "为什么你需要这样做？" >}}
 
-- Lorem ipsum dolor sit amet consectetur adipisicing elit.
-- Lorem ipsum dolor sit amet consectetur adipisicing elit.
-- Lorem ipsum dolor sit amet consectetur
-
-{{< /accordion >}}
-
-{{< accordion "How can I adjust Horizontal centering" >}}
-
-- Lorem ipsum dolor sit amet consectetur adipisicing elit.
-- Lorem ipsum dolor sit amet consectetur adipisicing elit.
-- Lorem ipsum dolor sit amet consectetur
+- 痛苦之人，应被视为有智慧之人。
+- 痛苦之人，应被视为有智慧之人。
+- 痛苦之人，应被视为有智慧之人。
 
 {{< /accordion >}}
 
-{{< accordion "Should you use Negative margin?" >}}
+{{< accordion "我怎样调整水平居中？" >}}
 
-- Lorem ipsum dolor sit amet consectetur adipisicing elit.
-- Lorem ipsum dolor sit amet consectetur adipisicing elit.
-- Lorem ipsum dolor sit amet consectetur
+- 痛苦之人，应被视为有智慧之人。
+- 痛苦之人，应被视为有智慧之人。
+- 痛苦之人，应被视为有智慧之人。
 
 {{< /accordion >}}
+
+{{< accordion "你应该使用负边距吗？" >}}
+
+- 痛苦之人，应被视为有智慧之人。
+- 痛苦之人，应被视为有智慧之人。
+- 痛苦之人，应被视为有智慧之人。
+
+{{< /accordion >}}
+
 
 <hr>
 
-### Code and Syntax Highlighting
+### 代码和语法高亮
 
-This is an `Inline code` sample.
+这是一个 `Inline code` 样例。
+
 
 ```javascript
 var s = "JavaScript syntax highlighting";
@@ -194,46 +198,46 @@ print s
 
 <hr>
 
-### Blockquote
+### 引用块
 
-> Did you come here for something in particular or just general Riker-bashing? And blowing into maximum warp speed, you appeared for an instant to be in two places at once.
+> 你是为了某件特别的事情来的还是只是来批评瑞克？当你加速到最大曲速时，你似乎瞬间出现在两个地方。
 
 <hr>
 
-### Tables
+### 表格
 
-| Tables        |      Are      |  Cool |
+| 物品        |      颜色      |  价格 |
 | ------------- | :-----------: | ----: |
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      |   centered    |   $12 |
-| zebra stripes |   are neat    |    $1 |
+| 冰淇淋    | 黄色 | 30元|
+| 巧克力      |   棕色    |   20元 |
+| 棉花糖 |   白色    |    10元 |
 
 <hr>
 
-### Image
+### 图片
 
-{{< image src="images/image-placeholder.png" caption="" alt="alter-text" height="" width="" position="center" command="fill" option="q100" class="img-fluid" title="image title"  webp="false" >}}
+{{< image src="images/image-placeholder.png" caption="" alt="替代文本" height="" width="" position="center" command="fill" option="q100" class="img-fluid" title="图片标题"  webp="false" >}}
 
 <hr>
 
-### Gallery
+### 画廊
 
 {{< gallery dir="images/gallery" class="" height="400" width="400" webp="true" command="Fit" option="" zoomable="true" >}}
 
 <hr>
 
-### Slider
+### 滑块
 
 {{< slider dir="images/gallery" class="max-w-[600px] ml-0" height="400" width="400" webp="true" command="Fit" option="" zoomable="true" >}}
 
 <hr>
 
-### Youtube video
+### Youtube视频
 
 {{< youtube ResipmZmpDU >}}
 
 <hr>
 
-### Custom video
+### 自定义视频
 
 {{< video src="https://www.w3schools.com/html/mov_bbb.mp4" width="100%" height="auto" autoplay="false" loop="false" muted="false" controls="true" class="rounded-lg" >}}
